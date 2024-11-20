@@ -16,13 +16,13 @@ const routes = [
   },
   {
     icon: BookOpen,
-    label: "Skills",
-    href: "/skills",
+    label: "Resume",
+    href: "/resume",
   },
   {
     icon: NotebookText,
     label: "Blogs",
-    href: "/blogs",
+    href: "/blog",
   },
   {
     icon: ContactRound,

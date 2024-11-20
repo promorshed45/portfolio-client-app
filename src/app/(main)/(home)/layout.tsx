@@ -6,7 +6,7 @@ const layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="">
       <Navbar/>
-      <main>
+      <main className="container mx-auto max-w-7xl py-10 md:px-6 flex-grow">
         {children}
       </main>
       <Footer/>
