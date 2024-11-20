@@ -13,7 +13,7 @@ const BlogCard = () => {
                             <p className="text-sm text-white font-semibold tracking-wide"> {blog.category} </p>
                             <p className="text-sm text-white font-semibold tracking-wide"> {blog.date} </p>
                         </div>
-                        <div className="bg-white px-3  lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
+                        <div className="bg-white px-3 md:h-40 lg:px-6 py-4 rounded-bl-3xl rounded-br-3xl">
                             <h1 className="text-lg text-gray-900 font-semibold">{blog.title}</h1>
                             <p className="text-gray-700 text-sm  lg:text-base  lg:leading-8 pr-4 tracking-wide mt-2">   {blog.content.slice(0, 50)}{blog.content.length > 50 && '...'}
                             </p>

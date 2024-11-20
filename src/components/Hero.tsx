@@ -1,5 +1,5 @@
 import { Button } from "@nextui-org/button";
-import { ArrowRight, DownloadIcon, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { DownloadIcon, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
