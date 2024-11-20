@@ -23,6 +23,8 @@ import NavDropdownMenu from "./ui/NavDropdownMenu";
 import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/theme-switch";
 import { Logo } from "@/src/components/icons";
+import NavbarItems from "./NavbarItems";
+import NavbarRoutes from "./NavbarRoutes";
 
 export const Navbar = () => {
   const { user } = useUser();
@@ -57,32 +59,20 @@ export const Navbar = () => {
   );
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar maxWidth="lg" position="sticky" className="">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">YDCT Center</p>
+           
+            <p className="font-bold text-inherit"> MA Emon </p>
           </NextLink>
         </NavbarBrand>
-
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
-                )}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
-        </ul>
       </NavbarContent>
+
+        {/* navbar menu */}
+          <NavbarContent justify="center">
+            <NavbarRoutes/> 
+          </NavbarContent>
 
       <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
@@ -93,32 +83,6 @@ export const Navbar = () => {
         </NavbarItem>
         {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
 
-        {/* search button */}
-        
-        {user?.email ? (
-          <NavDropdownMenu />
-        ) : (
-          <NavbarItem className="flex">
-            <Link
-              className="flex items-center justify-center gap-x-1 py-2 px-4 text-default-500 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-md md:inline-flex"
-              href="/login"
-            >
-              Login
-              <svg
-                className="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  clipRule="evenodd"
-                  d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </Link>
-          </NavbarItem>
-        )}
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
@@ -139,22 +103,8 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        {searchInput}
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
-                )}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
+        <NavbarRoutes/> 
         </div>
       </NavbarMenu>
     </NextUINavbar>

@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 const layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="relative h-screen overflow-hidden bg-purple-950 ">
+    <div className="relative overflow-hidden ">
         <div className="absolute inset-0 z-0" />
 
         <Image
