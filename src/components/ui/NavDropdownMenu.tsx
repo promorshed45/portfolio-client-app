@@ -61,22 +61,11 @@ const NavDropdownMenu = () => {
                   <DropdownItem
                     key="dashboard"
                     startContent={<LayoutDashboard className="size-4" />}
-                    href="/admin"
-                  >
-                    Dashboard
-                  </DropdownItem>
-                )}
-
-                {/* For User Role (Fallback, for standard users) */}
-                {user.role === "USER" && (
-                  <DropdownItem
-                    key="my-class"
-                    startContent={<BookOpenText className="size-4" />}
                     href="/dashboard"
                   >
                     Dashboard
                   </DropdownItem>
-                )}
+                )}                
               </>
             ) : null}
 

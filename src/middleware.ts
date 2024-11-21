@@ -7,7 +7,7 @@ const AuthRoutes = ["/login", "/register"];
 type Role = keyof typeof roleBasedRoutes;
 
 const roleBasedRoutes = {
-  USER: [/^\/dashboard/],
+  ADMIN: [/^\/dashboard/],
 };
 
 // This function can be marked `async` if using `await` inside
