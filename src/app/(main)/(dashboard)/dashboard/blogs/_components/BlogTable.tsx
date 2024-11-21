@@ -21,7 +21,6 @@ const statusColorMap = {
 const INITIAL_VISIBLE_COLUMNS = ["title", "category", "images", "date", "actions"];
 
 const BlogTable = ({data}: any) => {
-  console.log('courseTable', data);
   const [filterValue, setFilterValue] = useState("");
   const [selectedKeys, setSelectedKeys] = useState(new Set([]));
   const [visibleColumns, setVisibleColumns] = useState(new Set(INITIAL_VISIBLE_COLUMNS));

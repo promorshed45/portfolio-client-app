@@ -41,7 +41,7 @@ const TableActions = ({ item }: any) => {
       <DropdownMenu>
         {/* Call onAction for each item with a different action */}
         <DropdownItem onClick={() => onAction("View")}>View</DropdownItem>
-        <DropdownItem href={`/instructor/courses/${item._id}`}>Edit</DropdownItem>
+        <DropdownItem href={`/dashboard/blogs/${item._id}`}>Edit</DropdownItem>
         <DropdownItem onClick={() => onAction("Delete")}>Delete</DropdownItem>
       </DropdownMenu>
     </Dropdown>
