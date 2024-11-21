@@ -1,10 +1,7 @@
 "use client";
 
 import { Button } from "@nextui-org/button";
-import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signIn } from "next-auth/react";
-import { Divider } from "@nextui-org/divider";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FieldValues, SubmitHandler } from "react-hook-form";
