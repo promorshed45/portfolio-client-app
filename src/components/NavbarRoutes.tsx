@@ -2,45 +2,13 @@
 
 import { BookOpen, Radio, BookA, House, UserRound, Workflow, NotebookText, ContactRound } from "lucide-react";
 import NavbarItems from "./NavbarItems";
-
-const routes = [
-  {
-    icon: House,
-    label: "Home",
-    href: "/",
-  },
-  {
-    icon: UserRound,
-    label: "About",
-    href: "/about",
-  },
-  {
-    icon: BookOpen,
-    label: "Resume",
-    href: "/resume",
-  },
-  {
-    icon: NotebookText,
-    label: "Blogs",
-    href: "/blog",
-  },
-  {
-    icon: ContactRound,
-    label: "Contact",
-    href: "/contact",
-  },
-];
+import { siteConfig } from "../config/site";
 
 const NavbarRoutes = () => {
-  // const pathname = usePathname();
-
-  // const isTeacherPage = pathname?.includes("/teacher");
-
-  // const routes = isTeacherPage ? teacherRoutes : guestRoutes;
 
   return (
     <div className="flex gap-8 justify-center">
-      {routes.map((route) => (
+      {siteConfig.navItems.map((route: any) => (
         <NavbarItems
           key={route.href}
           icon={route.icon}

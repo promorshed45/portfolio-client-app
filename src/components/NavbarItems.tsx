@@ -14,14 +14,14 @@ const NavbarItems = ({ icon: Icon, label, href }: any) => {
         <Link
       href={href}
       type="button"
-      className={` rounded-md gap-x-2 justify-center text-sm  transition-all  hover:text-green-400 text-gray-400 bg-purple-300/20 ${
-        isActive ? "text-white bg-gradient-to-br from-violet-500 to-fuchsia-500 shadow-small" : ""
+      className={` rounded-md gap-x-2 justify-center text-sm  transition-all  hover:text-fuchsia-500 text-gray-400 bg-purple-300/20 ${
+        isActive ? "text-white hover:text-white bg-gradient-to-br from-violet-500 to-fuchsia-500 shadow-small" : ""
       }`}
     >
       <div className="flex items-center px-4 gap-x-2 py-2 ">
         <Icon
           size={22}
-          className={`hover:text-green-600 ${isActive ? " hover:text-green-400": ""}`}
+          className={`${isActive ? " hover:text-green-400": ""}`}
         />
         {label}
       </div>
