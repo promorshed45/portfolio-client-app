@@ -7,7 +7,7 @@ import { SiTailwindcss, SiShadcnui, SiNextui, SiTypescript, SiExpress, SiMongodb
 
 const Skills = () => {
     return (
-        <div className='container bg-white/5 rounded-lg w-full py-10 px-10'>
+        <div className='relative z-100 container bg-gray-950/90 rounded-lg w-full py-10 px-10'>
             <div className='grid grid-cols-1 md:grid-cols-2'>
                 <div>
                         <div className='pt-4 pb-8'>

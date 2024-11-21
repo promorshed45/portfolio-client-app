@@ -1,11 +1,11 @@
 const ResumeCard = () => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="realtive z-100 text-gray-600 body-font">
       <div className="container px-5 mx-auto">
         {degree.map((iterm: any) => (
           <div className="-m-4 text-center">
             <div className="p-4 w-full">
-              <div className="border border-gray-800 px-4 py-6 rounded-lg">
+              <div className="border border-gray-800 bg-black/80 px-4 py-6 rounded-lg">
                 <p className="leading-relaxed">{iterm.years}</p>
                 <h2 className="title-font font-medium text-xl text-gray-900 dark:text-gray-400">
                   {iterm.institute}
