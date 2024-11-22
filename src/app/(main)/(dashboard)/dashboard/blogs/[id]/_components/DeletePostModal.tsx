@@ -11,23 +11,18 @@ import {
 } from "@nextui-org/react";
 import { Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 const DeletePostModal = ({ postId }: { postId: string }) => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
-  const { mutate: handleDeletePost, isLoading, isSuccess } = useDeletePost();
+  const { mutate: handleDeletePost } = useDeletePost();
   const router = useRouter();
 
   const handleSubmit = () => {
     handleDeletePost({ postId });
   };
 
-  useEffect(() => {
-    if (!isLoading && isSuccess) {
-      router.push("/dashboard/blogs");
-    }
-  }, [isLoading, isSuccess]);
+
 
   return (
     <>

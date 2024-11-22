@@ -38,7 +38,7 @@ export const useUpdatePost = () => {
 
 
 export const useDeletePost = () => {
-  return useMutation<any, Error, { postId: string}>({
+  return useMutation<any, Error, { postId: any}>({
     mutationKey:  ["DELETE_POST"],
     mutationFn: async ({ postId }) => await deletePost(postId),
     onSuccess: (data) => {
