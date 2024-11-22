@@ -12,7 +12,7 @@ const Hero = () => {
           <Image
             height={240}
             width={240}
-            src="/assets/images/emon.png"
+            src="https://res.cloudinary.com/dlbifmph8/image/upload/v1732282164/3ts2heo3sma-1732282161247-postImages-emon.png"
             alt="NextUI Album Cover"
             className="m-5 rounded-full mx-auto"  // `mx-auto` for centering the image
           />

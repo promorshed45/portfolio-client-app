@@ -11,6 +11,7 @@ import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from 
 import TableActions from "./TableActions";
 import { User } from "@nextui-org/user";
 import { Avatar } from "@nextui-org/avatar";
+import Link from "next/link";
 
 
 const statusColorMap = {
@@ -82,7 +83,7 @@ const BlogTable = ({data}: any) => {
             );
       case "actions":
         return (
-          <div className="relative flex justify-end items-center gap-2 md:mr-20">
+          <div className="relative flex justify-end items-center gap-2">
             <TableActions item={item}/>
           </div>
         );
@@ -150,13 +151,16 @@ const BlogTable = ({data}: any) => {
                 ))}
               </DropdownMenu>
             </Dropdown>
+            <Link href="/dashboard/create-post">
             <Button
               className="bg-foreground text-background"
               endContent={<PlusIcon />}
               size="sm"
+              
             >
               Add New
             </Button>
+            </Link>
           </div>
         </div>
         <div className="flex justify-between items-center">

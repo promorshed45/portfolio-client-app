@@ -8,6 +8,7 @@ import ReusableInput from "@/src/components/ui/ReusableInput";
 import PostCard from "./PostCard";
 import ReusableTextarea from "@/src/components/ui/ReusableTextarea";
 import { useUpdatePost } from "@/src/hooks/post.hook";
+import ReusableSelect from "@/src/components/ui/ReusableSelect";
 
 interface FormInputs {
   title: string;
@@ -52,7 +53,7 @@ const UpdatePost = ({ postData }: UpdatePostProps) => {
   };
 
   return (
-    <div className="mt-6 border border-gray-300 dark:border-gray-900 dark:bg-black/90 rounded-md p-4">
+    <div className="mt-6 border border-gray-300 dark:border-gray-900 bg-white dark:bg-black/90 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
       <h2 className="text-xl font-semibold"> Blog Information </h2>
         <Button variant="flat" onClick={toggleEdit}>
@@ -61,7 +62,7 @@ const UpdatePost = ({ postData }: UpdatePostProps) => {
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Edit Title
+              Edit Post
             </>
           )}
         </Button>
@@ -76,23 +77,31 @@ const UpdatePost = ({ postData }: UpdatePostProps) => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="py-2 space-y-4">
               <ReusableInput
-                label=""
+                label="Title"
                 type="text"
                 name="title"
                 placeholder="Post Title"
                 labelPlacement="outside"
                 size="lg"
               />
-              <ReusableInput
-                label=""
-                type="text"
-                name="category"
-                placeholder="Post Category"
-                labelPlacement="outside"
-                size="lg"
-              />
+              <div className="pt-1">
+              <ReusableSelect
+                  label="Category"
+                  name="category"
+                  options={[
+                    { key: "Programming", label: "Programming"},
+                    { key: "Design", label: "Design"},
+                    { key: "Coding", label: "Coding"},
+                    { key: "Tech News", label: "Tech News"},
+                    { key: "Career Guidance", label: "Career Guidance"},
+                  ]}
+                  size="lg"
+                  labelPlacement="outside"
+                  />
+              </div>
+              
               <ReusableTextarea
-                label=""
+                label="Description"
                 type="text"
                 name="description"
                 placeholder="Post Description"

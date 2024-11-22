@@ -1,50 +1,37 @@
 // components/TableActions.js
 import React from "react";
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/dropdown";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+} from "@nextui-org/dropdown";
 import { Button } from "@nextui-org/button";
-import { EllipsisVertical, Router } from "lucide-react";
+import { EllipsisVertical, Pen, Router, Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useDeletePost } from "@/src/hooks/post.hook";
+import Link from "next/link";
 
 // Define the TableActions component that takes 'item' as a prop
 const TableActions = ({ item }: any) => {
-  const router = useRouter()
-  // Define the action handler
-  const onAction = (action: string) => {
-    console.log(`${action} clicked for item:`, item);
-    // You can implement more logic here based on the action
-    switch (action) {
-      case "View":
-        // View action logic
-        router.push(`/dashboard/blogs/${item._id}`);
-        break;
-      case "Edit":
-        // Edit action logic
-        router.push(`/dashboard/blogs/${item._id}`);
+  const router = useRouter();
+  const { mutate: handleDeletePost } = useDeletePost();
 
-        break;
-      case "Delete":
-        // Delete action logic
-        router.push(`/dashboard/blogs/${item._id}`);
-        break;
-      default:
-        break;
-    }
+  const handleSubmit = (id: string) => {
+    console.log(id);
+    handleDeletePost({ postId: id });
   };
 
   return (
-    <Dropdown>
-      <DropdownTrigger>
-        <Button isIconOnly size="sm" variant="light">
-          <EllipsisVertical className="text-default-400" />
-        </Button>
-      </DropdownTrigger>
-      <DropdownMenu>
+    <>
+      <div className="flex gap-3 items-center">
         {/* Call onAction for each item with a different action */}
-        <DropdownItem onClick={() => onAction("View")}>View</DropdownItem>
-        <DropdownItem href={`/dashboard/blogs/${item._id}`}>Edit</DropdownItem>
-        <DropdownItem onClick={() => onAction("Delete")}>Delete</DropdownItem>
-      </DropdownMenu>
-    </Dropdown>
+        <Link href={`/dashboard/blogs/${item._id}`}>
+          <button className="bg-gray-900 rounded-md px-2 py-1"> <Pen className="size-4 text-green-500"/> </button>
+        </Link>
+        <button className="bg-gray-900 rounded-md px-2 py-1" onClick={() => handleSubmit(item._id)}> <Trash className="size-4 text-red-500"/>  </button>
+      </div>
+    </>
   );
 };
 

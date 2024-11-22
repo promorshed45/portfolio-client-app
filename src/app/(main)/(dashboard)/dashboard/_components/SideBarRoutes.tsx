@@ -1,6 +1,6 @@
 "use client";
 
-import { LayoutDashboard, BookOpen, Radio, BookA } from "lucide-react";
+import { LayoutDashboard, BookOpen, Radio, BookA, NotebookPen } from "lucide-react";
 import SibeBarItems from "./SibeBarItems";
 
 const routes = [
@@ -14,8 +14,11 @@ const routes = [
     label: "Blogs",
     href: "/dashboard/blogs",
   },
-  
-  
+  {
+    icon: NotebookPen,
+    label: "Add Post",
+    href: "/dashboard/create-post",
+  }, 
 ];
 
 const SideBarRoutes = () => {

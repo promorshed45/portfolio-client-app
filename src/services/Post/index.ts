@@ -2,12 +2,14 @@
 import { FieldValues } from "react-hook-form";
 import { revalidateTag } from "next/cache";
 
+import nexiosInstance from "@/src/config/nexios.config";
 import axiosInstance from "@/src/lib/axiosInstance";
 
 export const addPost = async (postData: FieldValues) => {
   try {
     const { data } = await axiosInstance.post("/post", postData);
     revalidateTag("posts");
+    console.log('add post', data);
     return data;
   } catch (error: any) {
     console.error(error);
@@ -19,7 +21,7 @@ export const addPost = async (postData: FieldValues) => {
 
 export const updatePost = async (id: string, payload: any) => {
   try {
-    const response = await axiosInstance.patch(
+    const response = await nexiosInstance.put(
       `/post/${id}`,
       payload
     );

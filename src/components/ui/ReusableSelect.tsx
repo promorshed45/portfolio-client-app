@@ -26,6 +26,8 @@ const ReusableSelect = ({
   } = useFormContext();
   // console.log(errors);
   return (
+    <div className="space-y-2">
+
     <Select labelPlacement={labelPlacement} label={label} {...register(name)} className="w-full" defaultSelectedKeys={defaultValue ? [defaultValue] : undefined} errorMessage={ errors[name]?.message as string | undefined }
     isInvalid={!!errors[name]}
     isRequired={required}
@@ -35,6 +37,7 @@ const ReusableSelect = ({
         <SelectItem key={option.key}>{option.label}</SelectItem>
       ))}
     </Select>
+  </div>
   );
 };
 
