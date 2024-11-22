@@ -16,8 +16,13 @@ const routes = [
   },
   {
     icon: NotebookPen,
-    label: "Add Post",
+    label: "Add New Blog",
     href: "/dashboard/create-post",
+  }, 
+  {
+    icon: NotebookPen,
+    label: "Skill",
+    href: "/dashboard/skill",
   }, 
 ];
 

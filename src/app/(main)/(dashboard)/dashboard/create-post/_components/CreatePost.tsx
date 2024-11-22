@@ -19,14 +19,12 @@ import ReusableInput from "@/src/components/ui/ReusableInput";
 import { useAddNewPost } from "@/src/hooks/post.hook";
 
 const categoriesList = [
-  "Business Travel",
-  "Exploration",
-  "Travel Tips",
-  "Cultural Experiences",
-  "Destination Guides",
-  "Food And Drink",
-  "Adventure Activities",
-];
+  { key: "Programming", label: "Programming"},
+  { key: "Design", label: "Design"},
+  { key: "Coding", label: "Coding"},
+  { key: "Tech News", label: "Tech News"},
+  { key: "Career Guidance", label: "Career Guidance"},
+]
 
 const CreatePost = () => {
   const { user: userInfo } = useUser();
@@ -76,13 +74,7 @@ const CreatePost = () => {
                 <ReusableSelect
                   label="Category"
                   name="category"
-                  options={[
-                    { key: "Programming", label: "Programming"},
-                    { key: "Design", label: "Design"},
-                    { key: "Coding", label: "Coding"},
-                    { key: "Tech News", label: "Tech News"},
-                    { key: "Career Guidance", label: "Career Guidance"},
-                  ]}
+                  options={categoriesList}
                   size="lg"
                   labelPlacement="outside"
                   />
